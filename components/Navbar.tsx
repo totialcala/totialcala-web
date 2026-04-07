@@ -12,11 +12,11 @@ export default function Navbar() {
         className="cursor-pointer"
       >
         <Image
-          src="/images/logo.svg"
+          src="/images/logo-navbar.png"
           alt="Toti Alcalà"
-          width={140}
-          height={20}
-          className="h-5 w-auto"
+          width={160}
+          height={22}
+          className="h-6 w-auto"
         />
       </button>
 
