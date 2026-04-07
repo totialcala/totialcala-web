@@ -14,8 +14,8 @@ export default function Navbar() {
         <Image
           src="/images/logo-navbar.png"
           alt="Toti Alcalà"
-          width={160}
-          height={22}
+          width={396}
+          height={42}
           className="h-6 w-auto"
         />
       </button>
