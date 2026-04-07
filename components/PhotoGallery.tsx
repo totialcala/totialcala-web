@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
-import { useScroll, useTransform, motion, AnimatePresence } from "framer-motion";
+import { useScroll, useTransform, motion, AnimatePresence, type MotionValue } from "framer-motion";
 import Image from "next/image";
 
 const row1Photos = [
@@ -152,7 +152,7 @@ function PhotoRow({
   onOpen,
 }: {
   photos: string[];
-  x: ReturnType<typeof useTransform>;
+  x: MotionValue<number>;
   startIndex: number;
   onOpen: (index: number) => void;
 }) {
