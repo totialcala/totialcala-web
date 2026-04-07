@@ -6,21 +6,21 @@ import Image from "next/image";
 
 const cases = [
   {
-    tag: "Lanzamiento online",
-    type: "Infoproductor",
+    tag: "Evento híbrido corporativo",
+    type: "Roche Tomorrowland · Ciudad de México",
     stats: [
-      { label: "Días de directo", value: "3" },
-      { label: "Asistentes", value: "+800" },
-      { label: "Resultado", value: "120.000€" },
+      { label: "Presencial", value: "600" },
+      { label: "Online", value: "+850" },
+      { label: "Salas simultáneas", value: "4" },
     ],
     images: [
-      "/images/photos/Live_Criptoprofe.png",
-      "/images/photos/Vmix_Live1.png",
-      "/images/photos/Rec_Directos.png",
+      "/images/photos/Congress_001.png",
+      "/images/photos/Auditori_AXA.png",
+      "/images/photos/Banzai_Badalona_Sanofi.png",
     ],
-    problem: { title: "Caos técnico antes de cada directo", body: "Cortes de audio frecuentes y setup propio inestable. Perdía el 30% de la audiencia en cada incidencia técnica." },
-    solution: { title: "Dirección técnica completa + ensayo", body: "Rediseño del setup, sistema de backup y ensayo de 4h donde detectamos y solucionamos todos los puntos críticos." },
-    result: { title: "3 directos sin una sola incidencia", body: "Engagement +45%. Récord de ventas en las primeras 2 horas. Foco total en la audiencia." },
+    problem: { title: "Múltiples salas en paralelo, 3 idiomas, sin internet en el pabellón", body: "600 directivos y comerciales de toda Latam presenciales + 850 online en 4 salas de Zoom simultáneas. Traducción simultánea a inglés, español y portugués. Sin conexión a internet en el Pabellón de la Medicina." },
+    solution: { title: "Despliegue técnico completo desde cero", body: "Internet vía satélite instalado in-situ. Streaming doble a Zoom y YouTube. 2 cámaras robóticas por sala × 4 salas + main stage con 3 cámaras, todas centralizadas vía NDI e IP. Realización con 5 PC VMix. Dirección técnica y ejecución integral." },
+    result: { title: "Evento de referencia del sector Health Tech en Latam", body: "Feedback excelente de todos los asistentes. Grabación completa reutilizada para publicaciones internas de la compañía. Cero incidencias técnicas." },
   },
   {
     tag: "Evento híbrido corporativo",
@@ -78,7 +78,7 @@ function CaseDetail({ c, imgIdx }: { c: typeof cases[0]; imgIdx: number }) {
 
         <div className="space-y-4">
           {[
-            { label: "Problema", color: "text-red-400", dot: "bg-red-500", data: c.problem },
+            { label: "Proyecto inicial", color: "text-red-400", dot: "bg-red-500", data: c.problem },
             { label: "Solución", color: "text-sky-400", dot: "bg-sky-500", data: c.solution },
             { label: "Resultado", color: "text-green-400", dot: "bg-green-500", data: c.result },
           ].map(({ label, color, dot, data }) => (
