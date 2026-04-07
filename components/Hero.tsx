@@ -27,30 +27,42 @@ export default function Hero() {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20" />
 
-      {/* Top badges — stacked vertically */}
+      {/* Top badges — only on desktop */}
       <motion.div
         initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="absolute top-24 left-6 md:left-12 z-10 flex flex-col gap-2"
+        className="hidden md:flex absolute top-24 left-12 z-10 flex-col gap-2"
       >
-        {/* Slots badge — prominent */}
         <SlotsBadge size="md" />
-
-        {/* Role badge */}
         <div className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 text-sm text-white/60">
           <span className="w-1.5 h-1.5 rounded-full bg-red-500 live-dot" />
           Director técnico de lanzamientos y directos de venta
         </div>
       </motion.div>
 
-      {/* Main content — bottom left */}
-      <div className="relative z-10 px-6 md:px-12 pb-32 md:pb-36 max-w-4xl">
+      {/* Main content */}
+      <div className="relative z-10 px-6 md:px-12 pb-32 md:pb-36 w-full max-w-4xl text-center md:text-left mx-auto md:mx-0">
+
+        {/* Mobile-only badges */}
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex md:hidden flex-col items-center gap-2 mb-6"
+        >
+          <SlotsBadge size="md" />
+          <div className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1 text-xs text-white/60">
+            <span className="w-1.5 h-1.5 rounded-full bg-red-500 live-dot shrink-0" />
+            Director técnico de lanzamientos y directos de venta
+          </div>
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6"
+          className="text-3xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-5"
         >
           El día del lanzamiento{" "}
           <br className="hidden md:block" />
@@ -63,7 +75,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-white/70 text-lg md:text-xl max-w-xl mb-8 leading-relaxed"
+          className="text-white/70 text-base md:text-xl max-w-xl mb-7 leading-relaxed mx-auto md:mx-0"
         >
           Cuando hay dinero en juego en un directo,
           la parte técnica no puede fallar.
@@ -73,7 +85,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.65 }}
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start"
         >
           <a
             href="#contacto"

@@ -12,10 +12,10 @@ export default function Navbar() {
         className="cursor-pointer"
       >
         <Image
-          src="/images/logo-navbar.png"
+          src="/images/logo.svg"
           alt="Toti Alcalà"
-          width={130}
-          height={18}
+          width={140}
+          height={20}
           className="h-5 w-auto"
         />
       </button>
@@ -39,7 +39,8 @@ export default function Navbar() {
         href="#contacto"
         className="bg-sky-700 hover:bg-sky-600 text-white text-sm font-medium px-4 py-2 rounded-xl transition-colors duration-200 cursor-pointer whitespace-nowrap"
       >
-        Agenda una llamada / WhatsApp
+        <span className="hidden md:inline">Agenda una llamada / WhatsApp</span>
+        <span className="md:hidden">Contacto</span>
       </a>
     </nav>
   );
