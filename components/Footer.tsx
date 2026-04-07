@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -70,8 +71,12 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-slate-600 text-xs">
-          <p>© {new Date().getFullYear()} Toti Alcalà. Todos los derechos reservados.</p>
-          <p>Basado en Andorra 🇦🇩 · Plató en Girona 🇪🇸 · Disponible en todo el mundo 🌍</p>
+          <p>© {new Date().getFullYear()} TOTI STREAM SLU · CIF L-716433-A · Todos los derechos reservados.</p>
+          <div className="flex items-center gap-4">
+            <Link href="/aviso-legal" className="hover:text-slate-400 transition-colors duration-200">Aviso legal</Link>
+            <Link href="/privacidad" className="hover:text-slate-400 transition-colors duration-200">Privacidad</Link>
+            <Link href="/cookies" className="hover:text-slate-400 transition-colors duration-200">Cookies</Link>
+          </div>
         </div>
       </div>
     </footer>
