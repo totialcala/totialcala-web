@@ -56,13 +56,22 @@ body {
 }
 
 .marquee-left {
-  animation: marquee-left 90s linear infinite;
+  animation: marquee-left 45s linear infinite;
   width: max-content;
 }
 
 .marquee-right {
-  animation: marquee-right 144s linear infinite;
+  animation: marquee-right 72s linear infinite;
   width: max-content;
+}
+
+@media (min-width: 768px) {
+  .marquee-left {
+    animation-duration: 90s;
+  }
+  .marquee-right {
+    animation-duration: 144s;
+  }
 }
 
 .marquee-left:hover,
