@@ -28,7 +28,7 @@ export default function Home() {
       <ClientsMarquee />
       <Testimonials />
       <FearCallout />
-      <CaseStudies />
+      {/* <CaseStudies /> */}
       <PhotoGallery />
       <Locations />
       <Process />
