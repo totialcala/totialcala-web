@@ -21,6 +21,7 @@ const featured = [
     quote:
       "Trabajar con Toti desde 2012 ha sido una constante en muchos de nuestros proyectos más relevantes, desde Health 2.0 Barcelona hasta iniciativas internacionales como Universal Doctor o UhDa Health en Roma o Ginebra. Su manera de afrontar cada proyecto, combinando criterio, calma y precisión, aporta una tranquilidad difícil de encontrar. Es ese tipo de profesional que suma sin hacer ruido, pero cuya presencia se nota en cada resultado.",
     bg: "/images/photos/Auditori_AXA.png",
+    avatar: "/images/testimonials/jordi-serrano.jpeg",
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ const featured = [
     quote:
       "Llevo más de cinco años trabajando con Toti en eventos internacionales y, desde el primer momento, entendí que podía centrarme en el contenido y la experiencia sin preocuparme por la parte técnica. Ha liderado producciones complejas, conectando múltiples sedes y países en un mismo directo con una naturalidad que no es nada habitual. Trabajar con él es saber que todo fluye, incluso cuando el reto es especialmente exigente, sobretodo en LATAM (México y Colombia).",
     bg: "/images/photos/Banzai_Badalona_Sanofi.png",
+    avatar: "/images/testimonials/francisco-moreira.jpeg",
   },
 ];
 
