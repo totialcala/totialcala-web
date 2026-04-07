@@ -75,8 +75,8 @@ function ServiceCard({ s, index }: { s: typeof services[0]; index: number }) {
         ref={ref}
         className={`relative rounded-2xl p-6 border h-full transition-all duration-300 hover:-translate-y-1 ${
           s.highlight
-            ? `bg-sky-950/40 border-sky-800/50 hover:border-sky-600 ${active ? "border-sky-400 shadow-[0_0_20px_rgba(56,189,248,0.15)]" : ""}`
-            : `bg-slate-900/60 border-slate-800 hover:border-slate-600 ${active ? "border-white/50 shadow-[0_0_16px_rgba(255,255,255,0.06)]" : ""}`
+            ? `bg-sky-950/40 border-sky-800/50 hover:border-sky-600 ${active ? "border-sky-400 shadow-[0_0_20px_rgba(56,189,248,0.15)] md:border-sky-800/50 md:shadow-none" : ""}`
+            : `bg-slate-900/60 border-slate-800 hover:border-slate-600 ${active ? "border-white/50 shadow-[0_0_16px_rgba(255,255,255,0.06)] md:border-slate-800 md:shadow-none" : ""}`
         }`}
       >
         {s.highlight && (

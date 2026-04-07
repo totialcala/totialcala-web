@@ -18,49 +18,58 @@ export default function Navbar() {
     <>
       {/* Main navbar */}
       <nav className="fixed top-4 left-4 right-4 z-50 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-slate-800 overflow-hidden">
-        {/* Row 1: logo + nav links + CTA */}
-        <div className="flex items-center justify-between px-5 py-2.5">
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            aria-label="Inici"
-            className="cursor-pointer"
-          >
-            <Image
-              src="/images/logo-navbar.png"
-              alt="Toti Alcalà"
-              width={396}
-              height={42}
-              className="h-6 w-auto"
-            />
-          </button>
+        {/* Row 1 */}
+        <div className="px-5 py-2.5">
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-6 text-sm text-slate-400">
-            {links.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-white transition-colors duration-200 cursor-pointer">
-                {l.label}
-              </Link>
-            ))}
+          {/* Desktop: 3-col grid — links | logo | CTA */}
+          <div className="hidden md:grid grid-cols-3 items-center">
+            <div className="flex items-center gap-6 text-sm text-slate-400">
+              {links.map((l) => (
+                <Link key={l.href} href={l.href} className="hover:text-white transition-colors duration-200 cursor-pointer">
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+            <div className="flex justify-center">
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                aria-label="Inici"
+                className="cursor-pointer"
+              >
+                <Image src="/images/logo-navbar.png" alt="Toti Alcalà" width={396} height={42} className="h-6 w-auto" />
+              </button>
+            </div>
+            <div className="flex justify-end">
+              <a
+                href="#contacto"
+                className="bg-sky-700 hover:bg-sky-600 text-white text-sm font-medium px-4 py-2 rounded-xl transition-colors duration-200 cursor-pointer whitespace-nowrap"
+              >
+                Agenda una llamada / WhatsApp
+              </a>
+            </div>
           </div>
 
-          {/* Desktop CTA */}
-          <a
-            href="#contacto"
-            className="hidden md:block bg-sky-700 hover:bg-sky-600 text-white text-sm font-medium px-4 py-2 rounded-xl transition-colors duration-200 cursor-pointer whitespace-nowrap"
-          >
-            Agenda una llamada / WhatsApp
-          </a>
+          {/* Mobile: logo center + hamburger right */}
+          <div className="flex md:hidden items-center justify-between">
+            <div className="w-8" /> {/* spacer per centrar logo */}
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              aria-label="Inici"
+              className="cursor-pointer"
+            >
+              <Image src="/images/logo-navbar.png" alt="Toti Alcalà" width={396} height={42} className="h-5 w-auto" />
+            </button>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex flex-col gap-1.5 p-1 cursor-pointer"
+              aria-label="Menú"
+            >
+              <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            </button>
+          </div>
 
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden flex flex-col gap-1.5 p-1 cursor-pointer"
-            aria-label="Menú"
-          >
-            <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-          </button>
         </div>
 
         {/* Mobile CTA bar */}
