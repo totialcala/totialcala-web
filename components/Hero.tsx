@@ -13,7 +13,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[600px] flex flex-col justify-end overflow-hidden">
+    <section className="relative h-screen min-h-[600px] flex flex-col justify-center md:justify-end overflow-hidden">
       {/* Fullscreen background photo */}
       <Image
         src="/images/photos/Live_Criptoprofe.png"
@@ -49,7 +49,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex md:hidden flex-col items-center gap-2 mb-6"
+          className="flex md:hidden flex-col items-center gap-2 mb-5"
         >
           <SlotsBadge size="md" />
           <div className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1 text-xs text-white/60">
