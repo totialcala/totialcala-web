@@ -1,0 +1,37 @@
+import { auth } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
+import { supabaseAdmin } from "@/lib/supabase";
+
+const ADMIN_USER_ID = process.env.ADMIN_CLERK_USER_ID;
+
+async function checkAdmin() {
+  const { userId } = await auth();
+  if (!userId) return false;
+  if (ADMIN_USER_ID && userId !== ADMIN_USER_ID) return false;
+  return true;
+}
+
+export async function GET(_: Request, { params }: { params: Promise<{ id: string }> }) {
+  if (!(await checkAdmin())) return NextResponse.json({ error: "Sense permisos" }, { status: 403 });
+
+  const { id } = await params;
+  const { data, error } = await supabaseAdmin.from("directes").select("*").eq("id", id).single();
+
+  if (error) return NextResponse.json({ error: error.message }, { status: 404 });
+  return NextResponse.json(data);
+}
+
+export async function PATCH(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  if (!(await checkAdmin())) return NextResponse.json({ error: "Sense permisos" }, { status: 403 });
+
+  const { id } = await params;
+  const body = await request.json();
+  const { titol, data, tipus, assistents, durada_min, vod_url, backup_url, setup_notes, estat } = body;
+
+  const { error } = await supabaseAdmin.from("directes").update({
+    titol, data, tipus, assistents, durada_min, vod_url, backup_url, setup_notes, estat,
+  }).eq("id", id);
+
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  return NextResponse.json({ ok: true });
+}

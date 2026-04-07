@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -45,10 +46,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={dmSans.variable}>
-      <body className="bg-slate-950 text-white antialiased font-sans">
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="es" className={dmSans.variable}>
+        <body className="bg-slate-950 text-white antialiased font-sans">
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
