@@ -16,52 +16,22 @@ const featured = [
   },
   {
     id: 1,
-    name: "Lucía Ferrer",
-    role: "Creadora de contenido · Plan anual",
+    name: "Jordi Serrano Pons",
+    role: "Medical Doctor · Digital Health, Global Health & Planetary Health",
     quote:
-      "El ensayo técnico lo cambió todo. Yo pensaba que era un trámite, pero fue donde detectamos tres fallos que habrían arruinado el lanzamiento. Toti tiene un ojo clínico para los detalles que a mí se me escapan por estar en el escenario.",
-    bg: "/images/photos/Clients_Bernat_001.png",
+      "Trabajar con Toti desde 2012 ha sido una constante en muchos de nuestros proyectos más relevantes, desde Health 2.0 Barcelona hasta iniciativas internacionales como Universal Doctor o UhDa Health en Roma o Ginebra. Su manera de afrontar cada proyecto, combinando criterio, calma y precisión, aporta una tranquilidad difícil de encontrar. Es ese tipo de profesional que suma sin hacer ruido, pero cuya presencia se nota en cada resultado.",
+    bg: "/images/photos/Auditori_AXA.png",
   },
   {
     id: 2,
-    name: "Carlos Santamaría",
-    role: "CEO · Evento corporativo Healthtech",
+    name: "Francisco Moreira",
+    role: "CEO · Digital Tech Events",
     quote:
-      "Produjimos un evento híbrido para 400 personas con streaming simultáneo para Europa. Cero incidencias técnicas. El equipo de Toti coordinó todo sin que yo tuviera que preocuparme de nada. Profesionalidad de otro nivel.",
+      "Llevo más de cinco años trabajando con Toti en eventos internacionales y, desde el primer momento, entendí que podía centrarme en el contenido y la experiencia sin preocuparme por la parte técnica. Ha liderado producciones complejas, conectando múltiples sedes y países en un mismo directo con una naturalidad que no es nada habitual. Trabajar con él es saber que todo fluye, incluso cuando el reto es especialmente exigente, sobretodo en LATAM (México y Colombia).",
     bg: "/images/photos/Banzai_Badalona_Sanofi.png",
-  },
-  {
-    id: 3,
-    name: "Marta Iglesias",
-    role: "Coach · 1er lanzamiento online",
-    quote:
-      "Era mi primer lanzamiento en directo y estaba aterrada. Toti no solo resolvió la técnica — me dio confianza. Llegué al directo tranquila, sabiendo que si algo pasaba, él lo tenía cubierto. Cerré el 40% de ventas en los primeros 20 minutos.",
-    bg: "/images/photos/Live_ANDORRA_Criptoprofe1.png",
   },
 ];
 
-const secondary = [
-  {
-    name: "Diego Ramos",
-    role: "Consultor · Webinar de lanzamiento",
-    quote: "\"Pensaba que con buen contenido era suficiente. Toti me demostró que la ejecución técnica es la mitad de la venta.\"",
-  },
-  {
-    name: "Ana Cortés",
-    role: "Directora de marketing · Sanofi",
-    quote: "\"Para un evento farmacéutico con regulaciones estrictas, necesitaba a alguien que no fallara. Toti fue esa persona.\"",
-  },
-  {
-    name: "Pau Vidal",
-    role: "Emprendedor · Programa formativo",
-    quote: "\"Lo que más me sorprendió fue la reunión previa. Ya en esa llamada vi que estaba ante un profesional de otro nivel.\"",
-  },
-  {
-    name: "Sara Montoya",
-    role: "Infoproductora · Latam",
-    quote: "\"Trabajar con Toti desde Colombia fue como tenerle en la sala. La coordinación remota fue impecable de principio a fin.\"",
-  },
-];
 
 function getInitialIndex() {
   return Math.floor(Math.random() * featured.length);
@@ -147,27 +117,8 @@ export default function Testimonials() {
           </div>
         </FadeIn>
 
-        {/* Bottom row — 4 static secondary testimonials */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {secondary.map((s, i) => (
-            <FadeIn key={s.name} delay={0.2 + i * 0.07}>
-              <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-5 h-full">
-                <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                  {s.quote}
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 text-xs font-bold shrink-0">
-                    {s.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="text-white text-sm font-medium">{s.name}</div>
-                    <div className="text-slate-600 text-xs">{s.role}</div>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+        {/* Bottom row — hidden until real testimonials are ready */}
+        {/* secondary.map(...) */}
       </div>
     </section>
   );
