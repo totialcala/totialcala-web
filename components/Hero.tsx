@@ -13,7 +13,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[600px] flex flex-col justify-center md:justify-end overflow-hidden">
+    <section className="relative h-screen min-h-[600px] flex flex-col justify-end overflow-hidden">
       {/* Fullscreen background photo */}
       <Image
         src="/images/photos/Live_Criptoprofe.png"
@@ -42,7 +42,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Main content */}
-      <div className="relative z-10 px-6 md:px-12 pb-32 md:pb-36 w-full max-w-4xl text-center md:text-left mx-auto md:mx-0">
+      <div className="relative z-10 px-6 md:px-12 pb-36 md:pb-36 w-full max-w-4xl text-center md:text-left mx-auto md:mx-0">
 
         {/* Mobile-only badges */}
         <motion.div

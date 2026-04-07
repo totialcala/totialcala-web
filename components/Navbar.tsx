@@ -64,12 +64,14 @@ export default function Navbar() {
         </div>
 
         {/* Mobile CTA bar */}
-        <a
-          href="#contacto"
-          className="md:hidden flex items-center justify-center bg-sky-700 hover:bg-sky-600 text-white text-sm font-semibold py-3 transition-colors duration-200 cursor-pointer"
-        >
-          Agenda una llamada / WhatsApp
-        </a>
+        <div className="md:hidden px-4 pb-3">
+          <a
+            href="#contacto"
+            className="flex items-center justify-center bg-sky-700 hover:bg-sky-600 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200 cursor-pointer"
+          >
+            Agenda una llamada / WhatsApp
+          </a>
+        </div>
       </nav>
 
       {/* Mobile menu overlay */}
