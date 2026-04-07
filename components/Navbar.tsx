@@ -21,8 +21,15 @@ export default function Navbar() {
         {/* Row 1 */}
         <div className="px-5 py-2.5">
 
-          {/* Desktop: 3-col grid — links | logo | CTA */}
-          <div className="hidden md:grid grid-cols-3 items-center">
+          {/* Desktop: logo esquerra | links centre | CTA dreta */}
+          <div className="hidden md:flex items-center justify-between">
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              aria-label="Inici"
+              className="cursor-pointer"
+            >
+              <Image src="/images/logo-navbar.png" alt="Toti Alcalà" width={396} height={42} className="h-6 w-auto" />
+            </button>
             <div className="flex items-center gap-6 text-sm text-slate-400">
               {links.map((l) => (
                 <Link key={l.href} href={l.href} className="hover:text-white transition-colors duration-200 cursor-pointer">
@@ -30,23 +37,12 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            <div className="flex justify-center">
-              <button
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                aria-label="Inici"
-                className="cursor-pointer"
-              >
-                <Image src="/images/logo-navbar.png" alt="Toti Alcalà" width={396} height={42} className="h-6 w-auto" />
-              </button>
-            </div>
-            <div className="flex justify-end">
-              <a
-                href="#contacto"
-                className="bg-sky-700 hover:bg-sky-600 text-white text-sm font-medium px-4 py-2 rounded-xl transition-colors duration-200 cursor-pointer whitespace-nowrap"
-              >
-                Agenda una llamada / WhatsApp
-              </a>
-            </div>
+            <a
+              href="#contacto"
+              className="bg-sky-700 hover:bg-sky-600 text-white text-sm font-medium px-4 py-2 rounded-xl transition-colors duration-200 cursor-pointer whitespace-nowrap"
+            >
+              Agenda una llamada / WhatsApp
+            </a>
           </div>
 
           {/* Mobile: logo center + hamburger right */}
